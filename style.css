@@ -45,17 +45,9 @@ body {
     height: auto;
     display: block;       /* Forces the image to behave like a standalone box */
     margin: 0 auto;       /* Adds equal space on the left and right to center it */
+    animation: splashPulse 2s infinite ease-in-out;
 }
 
-/* The Text "PocketBhajanDiary" */
-.splash-text {
-    font-size: 28px;
-    font-weight: bold;
-    color: orange;
-    /* Gold Color */
-    font-family: sans-serif;
-    letter-spacing: 1px;
-}
 
 /* Animation to make the logo breathe */
 @keyframes splashPulse {
