@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <title>PocketBhajanDiary</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Yatra+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="splash-screen" id="splashScreen">
+        <div class="splash-icon img "><img src="logo main.png" alt=""></div>
+        <!-- <div class="splash-text">Pocket Bhajan Diary</div> -->
+    </div>
+
+    <div class="header">
+        <div class="header-icon" id="leftIcon">☰</div>
+        <div class="header-title" id="headerTitle">Pocket Bhajan Diary</div>
+        <div class="header-right">
+            <div class="search-icon" id="searchIcon">🔍</div>
+        </div>
+    </div>
+
+    <div class="search-bar" id="searchBar">
+        <div class="search-input-wrapper">
+            <span id="voiceSearchBtn" class="voice-icon">🎙️</span>
+            <input type="text" class="search-input" id="searchInput" placeholder="Search bhajans, aartis, chalisas...">
+            <button class="search-close" id="searchClose">×</button>
+        </div>
+    </div>
+
+    <div class="search-results" id="searchResults">
+        <div class="search-results-container" id="searchResultsContainer"></div>
+    </div>
+
+    <div class="video-container" id="videoContainer">
+        <button class="video-close" id="videoCloseBtn">×</button>
+        <div class="video-wrapper" id="videoWrapper"></div>
+    </div>
+
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+
+    <div class="drawer" id="drawer">
+        <div class="drawer-header">
+            <div class="drawer-header-icon">🕉️</div>
+            <div class="drawer-header-title">Pocket Bhajan Diary</div>
+        </div>
+        <div class="drawer-menu">
+            <div class="drawer-item" data-page="memories">
+                <span class="drawer-item-icon">📸</span>
+                <span>Event Memories</span>
+            </div>
+            <div class="drawer-item" data-page="feedback">
+                <span class="drawer-item-icon">💬</span>
+                <span>Feedback/Suggestions</span>
+            </div>
+            <div class="drawer-item" data-page="addBhajan">
+                <span class="drawer-item-icon">➕</span>
+                <span>Add Personal Bhajan</span>
+            </div>
+            <div class="drawer-item" data-page="credits">
+                <span class="drawer-item-icon">🙏</span>
+                <span>Credits</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="content" id="mainContent">
+        
+        <div id="homePage">
+            <div class="category-grid" id="categoryGrid"></div>
+        </div>
+
+        <div id="subCategoryPage" class="hidden">
+            <div class="list-container" id="subCategoryList"></div>
+        </div>
+
+        <div id="listPage" class="hidden">
+            <div class="list-container" id="itemList"></div>
+        </div>
+
+        <div id="lyricsPage" class="hidden">
+            <div class="lyrics-container">
+                <div class="lyrics-title" id="lyricsTitle"></div>
+                <div class="lyrics-text" id="lyricsText"></div>
+            </div>
+        </div>
+
+        <div id="memoriesPage" class="hidden">
+            <div class="feature-page">
+                <div class="feature-title">Event Memories</div>
+                <div class="feature-content">
+                    Coming Soon!<br><br>
+                    📸 Share your devotional event memories and photos here.
+                </div>
+            </div>
+        </div>
+
+        <div id="feedbackPage" class="hidden">
+            <div class="feature-page">
+                <div class="feature-title">Feedback & Suggestions</div>
+                <input type="text" placeholder="Your Name" id="feedbackName">
+                <textarea placeholder="Share your feedback or suggestions..." id="feedbackText"></textarea>
+                <button class="submit-btn" id="submitFeedbackBtn">Submit Feedback</button>
+            </div>
+        </div>
+
+        <div id="addBhajanPage" class="hidden">
+            <div class="feature-page">
+                <div class="feature-title">Add Personal Bhajan</div>
+                <input type="text" placeholder="Bhajan Title" id="bhajanTitle">
+                <textarea placeholder="Enter bhajan lyrics here..." id="bhajanLyrics"></textarea>
+                <button class="submit-btn" id="submitBhajanBtn">Add Bhajan</button>
+            </div>
+        </div>
+
+        <div id="creditsPage" class="hidden">
+            <div class="feature-page">
+                <div class="feature-title">App Credits</div>
+                <div class="feature-content">
+                    <strong>Developed by BDM Developers</strong><br><br>
+                    Made with devotion to help you keep your prayers close.<br><br>
+                    Version 1.0
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+    <script src="data.js"></script>
+    <script src="Aarti.js"></script>
+    <script src="Chalisa.js"></script>
+    <script src="Hanuman.js"></script>
+    <script src="Shiv.js"></script>
+    <script src="Holi Geet.js"></script>
+    <script src="Stotra.js"></script>
+    <script src="Stuti.js"></script>
+    <script src="SunderKand.js"></script>
+    <script src="Vrat Katha.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
