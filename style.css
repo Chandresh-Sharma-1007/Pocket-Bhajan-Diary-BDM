@@ -371,6 +371,13 @@ body {
     transition: opacity 0.3s;
 }
 
+.drawer-header-icon img {
+    width: 60px;        /* Adjust this number up or down to get the perfect size */
+    height: auto;       /* Keeps the logo from stretching */
+    display: block;     /* Helps the image behave as a solid block */
+    margin: 0 auto;     /* Pushes the logo perfectly into the center */
+}
+
 .drawer-overlay.active {
     display: block;
     opacity: 1;
