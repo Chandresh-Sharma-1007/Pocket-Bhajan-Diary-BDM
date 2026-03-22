@@ -1109,7 +1109,7 @@ window.appData["Bhajans"].subcategories["Balaji Bhajan"] = [
 },
 
 {
-    title: "1.	Jai Hanuman", 
+    title: "Jai Hanuman", 
     youtubeId: "", // I added a working ID here for you
     lyrics: `जय हनुमान अति बलवान, कृपा निधान, 
     मारुत नंदन, म्हारे तो थांरी ही ध्यावाना ।।
