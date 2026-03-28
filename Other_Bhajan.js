@@ -1,417 +1,405 @@
 // STEP 2: The Specific Songs for THIS file
 window.appData["Bhajans"].subcategories[" Other Bhajan "] = [
 
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
+{
+    title: " Bacha Leyi Bhagwan Laaj ",
+    youtubeId: "", // I added a working ID here for you
+    lyrics: ` बचा लेइ भगवान लाज नरसी की जाती रे 
+    ओ त्रिलोकी को नाथ जात को बन गयो खाती रे
 
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
-// {
-//     title: "",
-//     youtubeId: "", // I added a working ID here for you
-//     lyrics: `.`
-// },
+1 आंटी टेढ़ी पगड़ी बांधी गोडा ताई धोती रे 
+हाथा में औजार ले लिया कांधे धरि करोति रे 
+खाती जी देख नरसीजी हो गया राजी रे 
+ओ त्रिलोकी को नाथ जात को बन गयो खाती रे
+
+2 दुखी देखी नरसी ने सांवरो झट औजार उठाया रे 
+पूछी पालकी लगा तुरन्त वो पहियों घुरि लगायो रे 
+चांदी की या कील ठोक दी सोना की पाती रे 
+त्रिलोकी को नाथ जात को बन गयो खाती रे
+
+3 गाड़ी ठीक हो गई साँवरो आशन बीच जमायो रे 
+बुढा बूढा बैल देखकर नरसी जी घबरायो रे 
+बेला ऊपर हाथ फेर दियो बन गया हाथी रे 
+त्रिलोकी को नाथ जात को बन गयो खाती रे
+
+4 साधु ने बैठा गाड़ी म गोविंद बन गयो हाली रे 
+पल भर में अंजार नगर में पहुंच गई आ गाड़ी रे 
+मायरो में नंद को लालो बन गयो भाती रे 
+ओ त्रिलोकी को नाथ जात को बन गयो खाती रे
+
+बचा लेइ भगवान लाज नरसी की जाती रे `
+},
+
+{
+    title: " Huyi Mujhse Prabhu Bhool ",
+    youtubeId: "", // I added a working ID here for you
+    lyrics: ` हुई मुझसे प्रभु भूल, हर भूल को करो क्षमा, 
+    करो क्षमा, करो क्षमा, है मेरे प्रभु, है मेरे जिनदेव, 
+    हर भूल को करो क्षमा, करो क्षमा, करो क्षमा ।।
+
+प्रभुवर आपकी, मुनिवर है छवि, 
+भूल मुझसे, जब जब हुई कभी, 
+पालक आप हो, क्षमा दान दो प्रभु,
+ बालक अबोध हूँ, क्षमा करो प्रभु, 
+ हर भूल को करो क्षमा, करो क्षमा, करो क्षमा ।।1।।
+
+एक इंद्री से, पंच इंद्री तक, 
+सब जीवो से मै, प्रभु मांगता क्षमा,
+ जिनसे भी प्रभु, कोई बैर था बंधा, 
+ सब लोगो से मै, प्रभु मांगता क्षमा,
+  हर भूल को करो क्षमा, करो क्षमा, करो क्षमा ।।2।। `
+},
+
+{
+    title: " Is Jain Dharam Main Jinagam ",
+    youtubeId: "", // I added a working ID here for you
+    lyrics: ` ।। अहिंसा परमोधर्मः अहिंसा परमोधर्मः ।। 
+    ।। अहिंसा परमोधर्मः अहिंसा परमोधर्मः ।।
+
+इस जैन धरम में जिनागम, और संतो का समागम ।।
+
+हमे पल-पल पल-पल धर्म की याद दिलावे है, 
+हम भटके ना जीवन मे, मार्ग दिखावे है, 
+इस जैन धरम में जिनागम, और संतो का समागम ।। 1 ।।
+
+जैन धर्म में ही तो तत्व ज्ञान मिलता है,
+ कैसे रुके है हिंसा वो विज्ञान मिलता है, 
+ तू जैन धर्म में आया, शुभ कर्मों से ये पाया ।। 2 ।।
+
+हमे पल-पल पल-पल धर्म की याद दिलावे है, 
+हम भटके न जीवन मे, मार्ग दिखावे है, 
+इस जैन धरम में जिनागम, और संतो का समागम ।। 3 ।।
+
+लेकरके मुनि दीक्षा जो संत बनते है, 
+वे ही तो आने वाले अरिहंत बनते है,
+ लेके जैनेश्वरी दीक्षा, हमे देते धर्म की शिक्षा ।। 4 ।।
+
+हमे पल-पल पल-पल धर्म की याद दिलावे है, 
+हम भटके न जीवन मे, मार्ग दिखावे है,
+ इस जैन धरम में जिनागम, और संतो का समागम ।। 5 || `
+},
+
+{
+    title: " Jahan Le Chaloge Wahin Main Chalunga ",
+    youtubeId: "", // I added a working ID here for you
+    lyrics: ` जहाँ ले चलोगे वहीं मैं चलूँगा, 
+    जहां आप रख लोगे, वहीं मैं रहूँगा ।।
+
+यह जीवन समर्पित चरण में तुम्हारे, 
+तुम्ही मेरे सर्वस तुम्ही प्राण प्यारे, 
+तुम्हे छोड़ कर नाथ किससे कहूँगा, 
+जहाँ ले चलोगे वहीं मैं चलूँगा ।। 1 ।।
+
+ना कोई उलाहना, ना कोई अर्जी, 
+करलो करालो जो है तेरी मर्जी, 
+कहना भी होगा तो तुम्ही से कहूँगा, 
+जहाँ ले चलोगे वहीं मैं चलूँगा ।। 2 ।।
+
+दयानाथ दयनीय मेरी अवस्था, 
+तेरे हाथ अब मेरी सारी व्यवस्था,
+ जो भी कहोगे तुम, वही मैं करूँगा, 
+ जहाँ ले चलोगे वहीं मैं चलूँगा ।। 3 ।। `
+},
+
+{
+    title: "Jai Ho Jai Ho Aadinath  ",
+    youtubeId: "", // I added a working ID here for you
+    lyrics: ` जय हो जय हो आदिनाथ, जिनेंद्रदेव आदिनाथ ।। 
+    प्रथम तीर्थेश आदिनाथ, देवाधिदेव आदिनाथ ।। 
+    तेरी भक्ति के बिना, जिनेंद्र देव आदिनाथ ।। 
+    हो न पाए साधना, देवाधिदेव आदिनाथ ।। 
+    मेरे कर्म तुम ही जानो, तुमसे क्या छुपा भला ।। 
+    करके भावना विशुद्ध, भक्ति करने को चला ।। 
+    तेरी भक्ति की, शक्ति से, मुझको ये नया जनम मिला ।। 
+    णमो णमो जय आदिनाथ, जिनेन्द्रदेव आदिनाथ ।।
+     है त्रिलोकनाथ जिन, जिनेश्वरा है आदिनाथ ।। 
+     आदि अनादि काल से, जैन धर्म था सदा ।। 
+     ये जग रहे या न रहे, रहेगी इसकी मान्यता ।। 
+     क्या ये तन, क्या ये मन, आओ कर ले शुद्ध आत्मा ।। 
+     देवाधिदेव आदिनाथ, जिनेंद्रदेव आदिनाथ ।। 
+     देवाधिदेव आदिनाथ, जिनेंद्रदेव आदिनाथ ।। 
+     जिस किसी ने की प्रभु, देवाधिदेव आदिनाथ ।। 
+     जिनभक्ति और साधना, जिनेंद्रदेव आदिनाथ ।। 
+     उसको ही मिली सदा, देवाधिदेव आदिनाथ ।। 
+     चेतन्य दिव्य आत्मा, जिनेंद्रदेव आदिनाथ ।। 
+     मुझे भरम था जो है मेरा, था कभी नही मेरा ।। 
+     लगा रहा में पापों में, सुध न ली कभी जरा ।। 
+     तेरे दर पे में तो आ गया, करने अब तो कर्म निर्झरा ।।
+      णमो णमो जय आदिनाथ, जिनेन्द्र देव आदिनाथ ।। 
+      है त्रिलोकनाथ जिन, जिनेश्वरा है आदिनाथ ।। 
+      नीलांजना की मृत्यु से, वैराग्य आपको हुआ ।।
+       आपने जो कि प्रभु, हजारों वर्ष साधना ।।
+
+पाया मोक्ष आपने, धन्य कैलाश की धरा ।। `
+},
+
+{
+    title: " Jaisa Chaho Mujhko Samajhna ",
+    youtubeId: "", // I added a working ID here for you
+    lyrics: ` जैसा चाहो, मुझको समझना, बस इतना ही तुमसे कहना..
+     मांगने की आदत जाती नहीं, तेरे आगे लाज मुझे आती नहीं..
+
+बड़े बड़े पैसेवाले भी तेरे द्वारे आते हैं, 
+मुझको हैं मालुम की वो भी तुझसे मांग के खाते हैं..
+ देने में तु घबराता नहीं, तेरे आगे लाज मुझे आती नहीं ।।1।।
+
+तुमसे दादा शरम करू तो और कहां मैं जाऊंगा, 
+अपने इस परिवार का खर्चा बोल कहां से लाऊंगा.. 
+दुनिया तो बिगड़ी बनाती नहीं, तेरे आगे लाज मुझे आती नहीं ।।2।।
+
+तु ही कर्ता मेरी चिंता, खुब गुजारा चलता हैं,
+ कहे 'पवन' की तुझसे ज्यादा कोई नहीं कर सकता हैं.. 
+ झोली हर कही फैलाई जाती नहीं, तेरे आगे लाज मुझे आती नहीं ।।3।। `
+},
+
+
+{
+    title: " Jhunjhan Wali N Aaj Parawa ",
+    youtubeId: "", // I added a working ID here for you
+    lyrics: ` झुंझन वाली ने मैं आज पहनावा गजरो, 
+    पहरावा गजरो जी पहरावा गजरो ।।
+
+चुन चुन कलियाँ भागा से मैं फुलवा तोड़ के लाया रे,
+ जे ऋ घोटो बांकड़ो गट हार बनाया रे,
+  झुंझन वाली ने ।। 1 ।।
+
+यो अलबेलो गजरो महारी दादी के गल सोहे लो,
+ कोई भगता को मनड़ो गजरो घणो मोहे लो, 
+ झुंझन वाली ने ।।2 ||
+
+ब्रह्मा विष्णु शंकर थारे गजरे माहि समाया रे, 
+सूरज चंदा तारा भी देखन ने आया रे,
+ झुंझन वाली ने ।। 3 ।।
+
+ई गजरे की शान निराली जाने दुनिया सारी रे, 
+नाच कूद कर मैं तो आज खुद रिजावा रे,
+ झुंझन वाली ने ।। 4 ।। `
+},
+
+
+{
+    title: " Mahavir Ji Ka Dar Hai Suhana ",
+    youtubeId: "", // I added a working ID here for you
+    lyrics: ` महावीरजी का दर है सुहाना, 
+    ओ भक्तो बार बार चले आना, 
+    के करने से जिनवर भक्ति, मिलती है अद्धभुत शक्ति ।।
+
+जो भी महावीरा के दर पे आ जाता है, 
+बिन मांगे ही सब कुछ पा जाता है, 
+निशदिन प्रतिपल प्रभु को जो ध्याता है,
+ सोया भाग उसका जग जाता है, प्
+ रभु का हो जाये वो दीवाना दीवाना दीवाना, 
+ ओ महावीरजी का दर है सुहाना ।। 1 ।।
+
+सौम्य छवि प्रभुजी की, अद्धभुत निराली,
+ प्रभु निर्वाण को पाए, शुभ दिन दीवाली, 
+ चाँदनपुर महावीरजी जो आता है, 
+ टीले वाले बाबा का दरश जो पाता है, 
+ उसका हो जाये उद्घारा उद्धारा उद्धारा, 
+ महावीरजी का दर है सुहाना ।। 2 ।। `
+},
+
+{
+    title:  " Mere Guruwar Jahan Aajaye ",
+    youtubeId: "", // I added a working ID here for you
+    lyrics: ` मेरे गुरुवर जहाँ आ जाये, 
+    वहाँ लग जाता भक्तों का तांता, 
+    मेरे गुरुवर जहाँ आ जाये,
+     वहा खुशियों का मौसम है आता ।।
+
+गुरु दर्शन की आस मन लेके,
+ गुरु दर्शन को जो भी है आता,
+  मेरे गुरुवर है जब मुस्कुराते,
+   मन में आनंद आनंद छाता || 1 ||
+
+मेरे गुरुवर है जग से निराले,
+ आत्म कल्याण करना सिखाये,
+  वो तो भटके हुए आत्मनो को,
+   शिव पथ का है राही बनाये || 2 ||
+
+विद्यासागर है पुष्प ऐसे,
+ ज्ञान अमृत सदा बरसाये,
+  वो तो सूरज के जैसे चमकते,
+   भक्त मोहित हो जग भुल जाये ।। 3 ।। `
+},
+
+{
+    title: "Meri Bhakti Tu Meri Shakti Tu ",
+    youtubeId: "", // I added a working ID here for you
+    lyrics: ` मेरी भक्ति तू मेरी शक्ति तू, 
+    में कुछ भी नही प्रभु सब कुछ तू । 
+    मेरे प्रभु है जिनवर है जिनवर, 
+    तेरी जय जय जय जय हो ।।
+
+पूजा भक्ति हम करेंगे, मन मे भक्ति भाव लिए, 
+है प्रभु मेरे आदि जिनेश्वर, है प्रभु मेरे आदिनाथ ।। 1 ।।
+
+श्वेताम्बर हो या हो दिगम्बर हम जैनी बस जैन है,
+ हम तो है अनुयायी प्रभु श्री आदिनाथ महावीर के, 
+ हम करेंगे खूब भक्ति और भजन मन जोड़ के ।। 2 ।।
+
+पूजा भक्ति हम करेंगे, मन मे भक्ति भाव लिए 
+है प्रभु मेरे आदि जिनेश्वर, है प्रभु मेरे आदिनाथ ।। 3 ।।
+
+हम में हो भक्ति हम में ही शक्ति हमसे ही कल्याण है, 
+जैन हम और जैन तुम, महावीर की संतान है, 
+हम बनेंगे एक शक्ति, पंथ भेद को छोड़ के ।। 4 ।।
+
+पूजा भक्ति हम करेंगे, मन मे भक्ति भाव लिए 
+है प्रभु मेरे आदि जिनेश्वर, है प्रभु मेरे आदिनाथ ।। 5 `
+},
+
+{
+    title: "O Mawdi Thari Roop ",
+    youtubeId: "", // I added a working ID here for you
+    lyrics: ` ओ मावड़ी थारी रूप की शोभा न्यारी, 
+    थारे नैनो की ज्योत निराली महारी मावड़ी ।।
+
+ओ मावड़ी थारी सती की महिमा भारी,
+ सतियो में महासती रानी महारी मावड़ी ।। 1 ।।
+
+मावड़ी था जग में डंका बाजे, 
+सारी सृष्टि में थारो उजिजारो महारी मावड़ी ।। 2 ।।
+
+ओ मावड़ी थारे राह में फूल विशवा, 
+पलको पे थाने बिठावा माहरी मावड़ी ।। 3 ।।
+
+रेनू वविता थारा ही गुण गावा, 
+थारी सेवा जन्म बितावा माहरी मवड़ी ।। 4 ।। `
+},
+
+{
+    title: " Parshawnath Prabhu Mere ",
+    youtubeId: "", // I added a working ID here for you
+    lyrics: ` पार्श्वनाथ प्रभु मेरे पार्श्वनाथ प्रभु, 
+    पार्श्वनाथ प्रभु मेरे पार्श्वनाथ प्रभु ।।
+
+मिले हो मुझे प्रभु, बड़े नसीबो से, 
+है पाया मैंने तुझे, पिछले शुभ कर्मों से ।। 1 ||
+
+तेरी ही भक्ति से मन ये खिला है,
+ सदा रखना तू चरणों मे मुझे ।। 2 ।।
+
+मिले हो मुझे प्रभु, बड़े नसीबो से, 
+है पाया मैंने तुझे, पिछले शुभ कर्मों से ।। 3 ||
+
+तेरी बात बाबा जरा हटके है, 
+तुझे पाने लख चौरासी भटके है ।। 4 ।।
+
+जिंदगी में मेरी बाबा जो भी कमी थी, 
+तेरे दर पे आ जाने से नही रही ।।| 5 ||
+
+मिले हो मुझे प्रभु, बड़े नसीबो से,
+ है पाया मैंने तुझे, पिछले शुभ कर्मों से ।। 6 ||
+
+चरणों मे तेरी तो बाबा जन्नत है, 
+तेरी पूजा भक्ति करना अमृत है ।। 7 ।।
+
+तेरी शरण में प्रभुजी जब से में आया, 
+बिन मांगे ही मैंने सब पाया ।। 8 ।||
+
+मिले हो मुझे प्रभु, बड़े नसीबो से, 
+है पाया मैंने तुझे, पिछले शुभ कर्मों से ।। 9 ||
+
+तेरी ही भक्ति से मन ये खिला है, 
+सदा रखना तू चरणों मे मुझे ।। 10 ।। `
+},
+
+{
+    title: "Shree Laxmipati Bhagwan ",
+    youtubeId: "", // I added a working ID here for you
+    lyrics: ` श्री लक्ष्मीपति भगवान लाज रखो म्हारी, 
+    दुःख हरो द्वारिका नाथ शरण आयो थारी ॥
+
+1. प्रभु मंदिर एक बण्यो हैं सुन्दर अति भारी - २ 
+थारा दर्शन करबा आवे नर और नारी ॥
+
+2. प्रभु मोर मुकुट काना विच कुंडल सोहे - २
+ थार मुख पर मुरली मधुर मधुर मन मोहे ॥
+
+3. प्रभु वृंदावन में रास रच्यो अति भारी - २ 
+थार चाँद सूरज की महिमा अपरम न्यारी ॥
+
+4. थाने गावे नरसिंग दास बिकांणे वालो - २ 
+म्हारे जुगल जोड़ी को नाथ हैं दिनदयालो ।। `
+},
+
+
+{
+    title: " Sing Saja Diya Meh Barsadiya ",
+    youtubeId: "", // I added a working ID here for you
+    lyrics: ` सिंग सजा दिया, मेह बरसा दिया, रण में भेज दी ज्वाला 
+    बावन भेरू चौसठ योगणी, आगे भेरू मतवाला ।।
+
+प्रथम हाथ में खड्ग मात के, 
+दूजे हाथ में चमके भाला, 
+हाथ तीसरे में डमरू बाजे, 
+चौथे हाथ में मद का प्याला ।।1।।
+
+हाथ पाँचवे तुरी मात के,
+ छठे हाथ में भिच्छा ला, 
+ हाथ सातवे में रहे आरती, 
+ अष्ठ भूझा तेरी ह माला ।।2।।
+
+गांगा दास ब्राहण गावे, 
+तिरसुल पर रहने वाला, 
+जो कोई निंद्रा करे मात की,
+ उसका मुण्डा हो काला ।।3।। `
+},
+
+{
+    title: " Vari Javu re Balhari Javu re ",
+    youtubeId: "", // I added a working ID here for you
+    lyrics: ` वारी जाऊं रे, बलिहारी जाऊं रे, 
+    म्हारे सतगुरु आंगण आया, मैं वारी जाऊं रे, 
+    म्हारा दाता आंगण आया, मैं वारी जाऊं रे।।
+
+म्हारा सतगुरु आंगण आया, मैं गंगा गोमती नहाया, 
+रे मारी निर्मल हो गयी काया, मै वारी जाऊं रे,
+ म्हारा दाता आंगण आया, मैं वारी जाऊं रे।।
+
+म्हारा सतगुरु दर्शन दीन्हा, म्हारा भाग उदय कर दीन्हा,
+ मेरा भरम वरम सब छीना, मै वारी जाऊं रे, 
+ म्हारा दाता आंगण आया, मैं वारी जाऊं रे।।
+
+सब सखी मिलकर आओ, केसर रा तिलक लगावो, 
+गुरुदेव ने बधाओं, मैं वारी जाऊं रे, 
+म्हारा दाता आंगण आया, मैं वारी जाऊं रे।।
+
+म्हारी सत्संगी बन गयी भारी, थे गाओ मंगला चारी,
+ मेरी खुली हृदय की ताली, मै वारी जाऊं रे, 
+ म्हारा दाता आंगण आया, मैं वारी जाऊं रे।।
+
+दास नारायण जस गावे, चरणों में सीस नवायों, 
+मेरा सतगुरु पार उतारे, मै वारी जाऊं रे,
+ म्हारा दाता आंगण आया, मैं वारी जाऊं रे।। `
+},
+
+
+{
+    title: " tere bhakt hajaro lakho bheru ",
+    youtubeId: "", // I added a working ID here for you
+    lyrics: ` तेरे भक्त हज़ारो लाखो ए मेरे भेरू बाबा, 
+    मुझको भी अपना बनालो । ए मेरे भेरू बाबा, 
+    तेरे भक्त हज़ारो लाखो ए मेरे भेरू बाबा ।।
+
+1 किस्मत का मारा हु मैं, कर्मो से हारा हु मैं, 
+दर तेरे आया, दादा बन जा तू सहारा, 
+मुझको शरण में ले लो ए मेरे भेरू बाबा, 
+मुझको भी गले लगालो......
+
+2 दर तेरे आते है कितने सवाली बाबा, 
+कोई भी ना जाये दर तेरे से कभी खाली,
+ मुझे चरणों से लगा लो, 
+ मुझे अपना दास बना लो ए मेरे भेरू बाबा,
+  मुझको भी गले लगालो......
+
+3 आस अधूरी बाबा करदे तू पूरी, 
+दिन रात करू बाबा तेरी ही हजुरी,
+ मुझे अपना दास बना लो, 
+ मुझको चरणों से लगा लो, ए मेरे भेरू बाबा...
+  मुझको भी गले लगालो....... `
+},
+
+
 ];
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
