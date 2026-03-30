@@ -7,7 +7,9 @@ let currentCategory = null;
 let currentSubCategory = null;
 let currentItem = null;
 let searchActive = false;
-
+let currentPlaylist = [];
+let currentSongIndex = 0;
+let currentFontSize = 15; // Default starting size
 // ============================================
 // INITIALIZATION
 // ============================================
@@ -173,100 +175,116 @@ function handleSearch(e) {
   }
 }
 
-function searchAppData(query) {
-  const results = [];
+function searchAppData(rawQuery) {
+    const results = [];
 
-  if (typeof appData !== "undefined") {
-    Object.keys(appData).forEach((categoryName) => {
-      const category = appData[categoryName];
+    // ==========================================
+    // THE MAGIC CLEANER
+    // This removes newlines, commas, and double spaces so matches are perfect
+    // ==========================================
+    function cleanText(text) {
+        if (!text) return "";
+        return text.toLowerCase()
+                   .replace(/[\n\r]+/g, ' ')      // Turn invisible line breaks into spaces
+                   .replace(/[,.?!।॥|'"\-]/g, '') // Remove all punctuation and Hindi pipes
+                   .replace(/\s+/g, ' ')          // Turn double spaces into single spaces
+                   .trim();
+    }
 
-      if (!category) return; // Skip empty stuff
+    // Clean the user's search query
+    const query = cleanText(rawQuery);
+    if (query.length === 0) return results;
 
-      // 1. Match Main Category Name (e.g. "Aarti")
-      if (categoryName.toLowerCase().includes(query)) {
-        results.push({
-          type: "category",
-          category: categoryName,
-          title: categoryName,
-          path: "Main Category",
-        });
-      }
+    if (typeof appData !== "undefined") {
+        Object.keys(appData).forEach((categoryName) => {
+            const category = appData[categoryName];
 
-      // ============================================
-      // SEARCH LOCATION A: Subcategories (Existing)
-      // ============================================
-      if (category.subcategories) {
-        Object.keys(category.subcategories).forEach((subcatName) => {
-          // Check Subcategory Name
-          if (subcatName.toLowerCase().includes(query)) {
-            results.push({
-              type: "subcategory",
-              category: categoryName,
-              subcategory: subcatName,
-              title: subcatName,
-              path: `${categoryName}`,
-            });
-          }
-          // Check Items inside Subcategory
-          const items = category.subcategories[subcatName];
-          if (Array.isArray(items)) {
-            items.forEach((item) => {
-              if (item.title && item.title.toLowerCase().includes(query)) {
+            if (!category) return; // Skip empty stuff
+
+            // 1. Match Main Category Name
+            if (cleanText(categoryName).includes(query)) {
                 results.push({
-                  type: "item",
-                  category: categoryName,
-                  subcategory: subcatName, // Important for opening correct page
-                  item: item,
-                  title: item.title,
-                  path: `${categoryName} > ${subcatName}`,
+                    type: "category",
+                    category: categoryName,
+                    title: categoryName,
+                    path: "Main Category",
                 });
-              }
-            });
-          }
-        });
-      }
+            }
 
-      // ============================================
-      // SEARCH LOCATION B: Direct Items (The Fix for Aarti!) 🛠️
-      // ============================================
-      // Checks if the category has a direct "items" list
-      if (category.items && Array.isArray(category.items)) {
-        category.items.forEach((item) => {
-          if (item.title && item.title.toLowerCase().includes(query)) {
-            results.push({
-              type: "item",
-              category: categoryName,
-              subcategory: null, // No subcategory
-              item: item,
-              title: item.title,
-              path: `${categoryName}`,
-            });
-          }
-        });
-      }
+            // ==========================================
+            // SEARCH LOCATION A: Subcategories
+            // ==========================================
+            if (category.subcategories) {
+                Object.keys(category.subcategories).forEach((subcatName) => {
+                    // Check Subcategory Name
+                    if (cleanText(subcatName).includes(query)) {
+                        results.push({
+                            type: "subcategory",
+                            category: categoryName,
+                            subcategory: subcatName,
+                            title: subcatName,
+                            path: `${categoryName}`,
+                        });
+                    }
 
-      // ============================================
-      // SEARCH LOCATION C: Flat Lists
-      // ============================================
-      // Checks if the category itself is just a list of songs
-      if (Array.isArray(category)) {
-        category.forEach((item) => {
-          if (item.title && item.title.toLowerCase().includes(query)) {
-            results.push({
-              type: "item",
-              category: categoryName,
-              subcategory: null,
-              item: item,
-              title: item.title,
-              path: `${categoryName}`,
-            });
-          }
-        });
-      }
-    });
-  }
+                    // Check Items inside Subcategory
+                    const items = category.subcategories[subcatName];
+                    if (Array.isArray(items)) {
+                        items.forEach((item) => {
+                            if (cleanText(item.title).includes(query) || cleanText(item.lyrics).includes(query)) {
+                                results.push({
+                                    type: "item",
+                                    category: categoryName,
+                                    subcategory: subcatName,
+                                    item: item,
+                                    title: item.title,
+                                    path: `${categoryName} > ${subcatName}`,
+                                });
+                            }
+                        });
+                    }
+                });
+            }
 
-  return results;
+            // ==========================================
+            // SEARCH LOCATION B: Direct Items 
+            // ==========================================
+            if (category.items && Array.isArray(category.items)) {
+                category.items.forEach((item) => {
+                    if (cleanText(item.title).includes(query) || cleanText(item.lyrics).includes(query)) {
+                        results.push({
+                            type: "item",
+                            category: categoryName,
+                            subcategory: null, 
+                            item: item,
+                            title: item.title,
+                            path: `${categoryName}`,
+                        });
+                    }
+                });
+            }
+
+            // ==========================================
+            // SEARCH LOCATION C: Flat Lists
+            // ==========================================
+            if (Array.isArray(category)) {
+                category.forEach((item) => {
+                    if (cleanText(item.title).includes(query) || cleanText(item.lyrics).includes(query)) {
+                        results.push({
+                            type: "item",
+                            category: categoryName,
+                            subcategory: null,
+                            item: item,
+                            title: item.title,
+                            path: `${categoryName}`,
+                        });
+                    }
+                });
+            }
+        });
+    }
+
+    return results;
 }
 
 function displaySearchResults(results) {
@@ -333,16 +351,25 @@ function renderHome() {
   categories.forEach((category) => {
     const card = document.createElement("div");
     card.className = "category-card";
-    // Using the updated HTML/CSS structure
+// 1. ADD THE SMART ICON INTERCEPTOR HERE
+    let smartIcon = appData[category].icon;
+    if (smartIcon && smartIcon.includes("<img") && !smartIcon.includes("loading=")) {
+        smartIcon = smartIcon.replace("<img", "<img loading='lazy'");
+    }
+
+    // 2. UPDATE THE HTML TO USE smartIcon INSTEAD OF appData[category].icon
     card.innerHTML = `
-                    <div class="category-icon">${appData[category].icon}</div>
-                    <div class="category-name">${category}</div>
-                `;
+        <div class="category-icon">${smartIcon}</div>
+        <div class="category-name">${category}</div>
+    `;
     card.addEventListener("click", function () {
       openCategory(category);
     });
     grid.appendChild(card);
   });
+
+  currentCategory = null;
+    currentSubCategory = null;
 
   showPage("homePage");
   updateHeader("Pocket Bhajan Diary", "menu");
@@ -358,6 +385,7 @@ function renderHome() {
 
 function openCategory(category) {
   console.log("Opening category:", category);
+  currentSubCategory = null;
   currentCategory = category;
   const categoryData = appData[category];
 
@@ -449,6 +477,19 @@ function openLyrics(item) {
   console.log("Opening lyrics for:", item.title);
   currentItem = item;
 
+// --- NEW: SAVE THE PLAYLIST SO NEXT/PREV KNOWS WHERE WE ARE ---
+    if (currentSubCategory) {
+        currentPlaylist = appData[currentCategory].subcategories[currentSubCategory];
+    } else if (currentCategory && appData[currentCategory].items) {
+        currentPlaylist = appData[currentCategory].items;
+    } else {
+        currentPlaylist = [item]; // Fallback for search results
+    }
+    // Find the exact number (index) of the song we clicked
+    currentSongIndex = currentPlaylist.findIndex(song => song.title === item.title);
+    updateNavButtons(); // Turns buttons on or off
+    // -------------------------------------------------------------
+  
   // Set Title and Lyrics
   document.getElementById("lyricsTitle").textContent = item.title;
 
@@ -479,25 +520,48 @@ function openLyrics(item) {
   // ============================================================
   const headerRight = document.querySelector(".header-right");
 
-  if (headerRight) {
-    // A. Define the Search Icon (Always present)
-    const searchIconHtml = `<div class="search-icon" id="searchIcon" onclick="toggleSearch()">🔍</div>`;
+if (headerRight) {
+        // Force them into a perfect row so they don't overlap
+        headerRight.style.display = "flex";
+        headerRight.style.alignItems = "center";
+        headerRight.style.gap = "15px";
 
-    // B. Get the Video ID (Check BOTH names!)
-    // Some files use 'video', some use 'youtubeId'. This handles both.
-    const videoId = item.video || item.youtubeId;
+        // A. Define the Search Icon AND the Gear Icon
+        const searchIconHtml = `<div id="searchIcon" onclick="toggleSearch()" style="cursor: pointer; font-size: 16px;">🔍</div>`;
+        const settingsIconHtml = `<div onclick="toggleSettings()" style="cursor: pointer; font-size: 18px; margin-right: 15px;">⚙️</div>`;
 
-    // C. Define Play Button
-    let playButtonHtml = "";
+        // B. Get the Video ID (Check BOTH names!)
+        const videoId = item.video || item.youtubeId;
 
-    // Check if we found a valid ID
-    if (videoId && videoId.trim() !== "") {
-      playButtonHtml = `<div class="play-icon" style="margin-right: 15px; cursor: pointer;" onclick="playVideo('${videoId}')">▶ </div>`;
+        // C. Define Play Button
+        let playButtonHtml = "";
+        if (videoId && videoId.trim() !== "") {
+            playButtonHtml = `<div style="cursor: pointer; color: #d4af37; font-size: 16px;" onclick="playVideo('${videoId}')">►</div>`;
+        }
+
+        // D. Combine ALL THREE of them
+        headerRight.innerHTML = playButtonHtml + searchIconHtml + settingsIconHtml;
     }
 
-    // D. Combine them
-    headerRight.innerHTML = playButtonHtml + searchIconHtml;
-  }
+  // if (headerRight) {
+  //   // A. Define the Search Icon (Always present)
+  //   const searchIconHtml = `<div class="search-icon" id="searchIcon" onclick="toggleSearch()">🔍</div>`;
+
+  //   // B. Get the Video ID (Check BOTH names!)
+  //   // Some files use 'video', some use 'youtubeId'. This handles both.
+  //   const videoId = item.video || item.youtubeId;
+
+  //   // C. Define Play Button
+  //   let playButtonHtml = "";
+
+  //   // Check if we found a valid ID
+  //   if (videoId && videoId.trim() !== "") {
+  //     playButtonHtml = `<div class="play-icon" style="margin-right: 15px; cursor: pointer;" onclick="playVideo('${videoId}')">▶ </div>`;
+  //   }
+
+  //   // D. Combine them
+  //   headerRight.innerHTML = playButtonHtml + searchIconHtml;
+  // }
   // ============================================================
   // ============================================================
 
@@ -645,25 +709,47 @@ function showPage(pageId) {
 }
 
 function updateHeader(title, iconType, showPlayButton = false) {
-  console.log("Updating header:", title, iconType, showPlayButton);
-  document.getElementById("headerTitle").textContent = title;
-  const leftIcon = document.getElementById("leftIcon");
-  leftIcon.textContent = iconType === "menu" ? "☰" : "←";
+    console.log("Updating header:", title, iconType, showPlayButton);
+    document.getElementById("headerTitle").textContent = title;
+    
+    const leftIcon = document.getElementById("leftIcon");
+    if (leftIcon) {
+        leftIcon.textContent = iconType === "menu" ? "☰" : "←";
+    }
 
-  const headerRight = document.querySelector(".header-right");
-  if (showPlayButton && currentItem && currentItem.youtubeId) {
-    headerRight.innerHTML =
-      '<button class="play-button" id="playVideoBtn">▶ Play</button>';
-    document
-      .getElementById("playVideoBtn")
-      .addEventListener("click", playVideo);
-  } else {
-    headerRight.innerHTML = '<div class="search-icon" id="searchIcon">🔍</div>';
-    document
-      .getElementById("searchIcon")
-      .addEventListener("click", toggleSearch);
-  }
+    const headerRight = document.querySelector(".header-right");
+
+    if (headerRight) {
+        // Force them into a perfect row with 15px of space between them!
+        headerRight.style.display = "flex";
+        headerRight.style.alignItems = "center";
+        headerRight.style.gap = "15px";
+        
+        let playButtonHtml = "";
+
+        // Define the Play button
+        if (showPlayButton && currentItem) {
+            const videoId = currentItem.video || currentItem.youtubeId;
+            if (videoId && videoId.trim() !== "") {
+                playButtonHtml = `<div id="playVideoBtn" style="cursor: pointer; color: #d4af37; font-size: 16px;">►</div>`;
+            }
+        }
+
+        // Combine them using pure HTML/inline-styles so CSS can't force them to overlap
+        headerRight.innerHTML = 
+            playButtonHtml + 
+            `<div id="searchIcon" style="cursor: pointer; font-size: 16px;">🔍</div>` + 
+            `<div onclick="toggleSettings()" style="cursor: pointer; font-size: 18px;">⚙️</div>`;
+
+        // Attach the click features safely
+        const searchBtn = document.getElementById("searchIcon");
+        if (searchBtn) searchBtn.addEventListener("click", toggleSearch);
+
+        const playBtn = document.getElementById("playVideoBtn");
+        if (playBtn) playBtn.addEventListener("click", playVideo);
+    }
 }
+
 
 function handleLeftIcon() {
   const icon = document.getElementById("leftIcon").textContent;
@@ -771,4 +857,151 @@ if ("webkitSpeechRecognition" in window) {
 } else {
   if (voiceBtn) voiceBtn.style.display = "none"; // Hide mic if browser is old
   console.log("Voice search not supported in this browser");
+}
+
+// ==========================================
+// PREVIOUS / NEXT BUTTON LOGIC (SMART VERSION)
+// ==========================================
+
+function goPrevious() {
+    if (currentSongIndex > 0) {
+        currentSongIndex--;
+        const prevItem = currentPlaylist[currentSongIndex];
+        changeLyricsOnScreen(prevItem);
+    }
+}
+
+function goNext() {
+    if (currentSongIndex < currentPlaylist.length - 1) {
+        currentSongIndex++;
+        const nextItem = currentPlaylist[currentSongIndex];
+        changeLyricsOnScreen(nextItem);
+    }
+}
+
+function changeLyricsOnScreen(item) {
+    // 1. Update current item
+    currentItem = item;
+    
+    // 2. Change the text on the screen
+    document.getElementById("lyricsTitle").textContent = item.title;
+    const lyricsContainer = document.getElementById("lyricsText");
+    if (lyricsContainer) {
+        lyricsContainer.innerText = item.lyrics;
+    }
+
+    // 3. Update the header (Play button & Title)
+    updateHeader(item.title, "back", true);
+    
+    // 4. Update the buttons with the new smart names!
+    updateNavButtons();
+}
+
+function updateNavButtons() {
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    
+    // --- 1. HANDLE PREVIOUS BUTTON ---
+    if (prevBtn) {
+        if (currentSongIndex > 0) {
+            prevBtn.disabled = false;
+            let title = currentPlaylist[currentSongIndex - 1].title;
+            if (title.length > 12) title = title.substring(0, 12) + "...";
+            prevBtn.innerHTML = `&#8592; ${title}`;
+        } else {
+            prevBtn.disabled = true;
+            prevBtn.innerHTML = `&#8592; Previous`;
+        }
+    }
+    
+    // --- 2. HANDLE NEXT BUTTON ---
+    if (nextBtn) {
+        if (currentSongIndex < currentPlaylist.length - 1) {
+            nextBtn.disabled = false;
+            let title = currentPlaylist[currentSongIndex + 1].title;
+            if (title.length > 12) title = title.substring(0, 12) + "...";
+            nextBtn.innerHTML = `${title} &#8594;`;
+        } else {
+            nextBtn.disabled = true;
+            nextBtn.innerHTML = `Next &#8594;`;
+        }
+    }
+}
+
+// ==========================================
+// ZOOM IN / ZOOM OUT LOGIC
+// ==========================================
+function changeFontSize(changeAmount) {
+    const lyricsText = document.getElementById("lyricsText");
+    
+    // Add or subtract from the current size
+    currentFontSize += changeAmount;
+    
+    // Safety check: Don't let it get extremely tiny or massively huge!
+    if (currentFontSize < 12) currentFontSize = 12;
+    if (currentFontSize > 40) currentFontSize = 40;
+    
+    // Apply the new size to the lyrics
+    lyricsText.style.fontSize = currentFontSize + "px";
+    lyricsText.style.lineHeight = "1.8"; // Keeps line spacing readable when big
+}
+
+// ==========================================
+// PINCH-TO-ZOOM GESTURE LOGIC
+// ==========================================
+document.addEventListener("DOMContentLoaded", function() {
+    const lyricsBox = document.getElementById("lyricsText");
+    let initialPinchDistance = null;
+
+    // 1. Detect when two fingers touch the screen
+    lyricsBox.addEventListener("touchstart", function(e) {
+        if (e.touches.length === 2) {
+            // Calculate the distance between the two fingers
+            initialPinchDistance = Math.hypot(
+                e.touches[0].pageX - e.touches[1].pageX,
+                e.touches[0].pageY - e.touches[1].pageY
+            );
+        }
+    });
+
+    // 2. Detect when the fingers move (pinching in or out)
+    lyricsBox.addEventListener("touchmove", function(e) {
+        if (e.touches.length === 2 && initialPinchDistance !== null) {
+            // Prevent the screen from scrolling while zooming
+            e.preventDefault(); 
+
+            const currentDistance = Math.hypot(
+                e.touches[0].pageX - e.touches[1].pageX,
+                e.touches[0].pageY - e.touches[1].pageY
+            );
+
+            const distanceDifference = currentDistance - initialPinchDistance;
+
+            // If fingers move apart, zoom IN (+1)
+            if (distanceDifference > 15) {
+                changeFontSize(1);
+                initialPinchDistance = currentDistance; // Reset for smooth continuous zooming
+            } 
+            // If fingers squeeze together, zoom OUT (-1)
+            else if (distanceDifference < -15) {
+                changeFontSize(-1);
+                initialPinchDistance = currentDistance;
+            }
+        }
+    }, { passive: false }); // 'passive: false' is required to use e.preventDefault()
+
+    // 3. Reset when fingers leave the screen
+    lyricsBox.addEventListener("touchend", function(e) {
+        initialPinchDistance = null;
+    });
+});
+
+// ==========================================
+// SETTINGS MENU LOGIC
+// ==========================================
+function toggleSettings() {
+    const dropdown = document.getElementById("settingsDropdown");
+    if (dropdown) {
+        dropdown.classList.toggle("hidden");
+    }
 }
