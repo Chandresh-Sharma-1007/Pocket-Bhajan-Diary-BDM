@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <title>PocketBhajanDiary</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Yatra+One&display=swap" rel="stylesheet">
@@ -82,13 +82,29 @@
         <div id="listPage" class="hidden">
             <div class="list-container" id="itemList"></div>
         </div>
-
-        <div id="lyricsPage" class="hidden">
-            <div class="lyrics-container">
-                <div class="lyrics-title" id="lyricsTitle"></div>
-                <div class="lyrics-text" id="lyricsText"></div>
-            </div>
+        
+<div id="lyricsPage" class="hidden">
+    <div class="lyrics-container">
+        <div class="lyrics-title" id="lyricsTitle"></div>
+        <div class="lyrics-text" id="lyricsText"></div>
+        
+        <!-- Navigation Buttons added here! -->
+        <div class="navigation-buttons" id="navButtons">
+            <button id="prevBtn" onclick="goPrevious()">&#8592; Previous</button>
+            <button id="nextBtn" onclick="goNext()">Next &#8594;</button>
         </div>
+        
+    </div>
+</div>
+
+<!-- Settings Dropdown Menu (Hidden by default) -->
+<div id="settingsDropdown" class="settings-dropdown hidden">
+    <div class="settings-title">Text Size</div>
+    <div class="font-controls-popup">
+        <button onclick="changeFontSize(-2)">A-</button>
+        <button onclick="changeFontSize(2)">A+</button>
+    </div>
+</div>
 
         <div id="memoriesPage" class="hidden">
             <div class="feature-page">
@@ -130,6 +146,8 @@
         </div>
 
     </div>
+
+    
     
     <script src="data.js"></script>
     <script src="Aarti.js"></script>
@@ -154,6 +172,7 @@
     <script src="SunderKand.js"></script>
     <script src="Vrat Katha.js"></script>
     <script src="script.js"></script>
+
 
 </body>
 </html>
