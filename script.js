@@ -624,25 +624,38 @@ function closeVideo() {
 // ============================================
 // FEATURE PAGES (Updated for Credits)
 // ============================================
+
+
 function openFeaturePage(page) {
   console.log("Opening feature page:", page);
   closeDrawer();
   navigationStack.push({ view: currentView });
 
+  document.getElementById("homePage").classList.add("hidden");
+
+  // --- FIX: Force hide ALL feature pages first so they don't stack ---
+    ['memoriesPage', 'feedbackPage', 'aboutPage', 'sevaPage', 'creditsPage'].forEach(id => {
+        let el = document.getElementById(id);
+        if (el) el.classList.add("hidden");
+    });
+    // -------------------------------------------------------------------
+
   if (page === "memories") {
-    showPage("memoriesPage");
-    updateHeader("Event Memories", "back");
-  } else if (page === "feedback") {
-    showPage("feedbackPage");
-    updateHeader("Feedback", "back");
-  } else if (page === "addBhajan") {
-    showPage("addBhajanPage");
-    updateHeader("Add Bhajan", "back");
-  } else if (page === "credits") {
-    // --- FIX: Added logic for Credits ---
-    showPage("creditsPage");
-    updateHeader("Credits", "back");
-  }
+        showPage("memoriesPage");
+        updateHeader("Event Memories", "back");
+    } else if (page === "feedback") {
+        showPage("feedbackPage");
+        updateHeader("Feedback", "back");
+    } else if (page === "about") {
+        showPage("aboutPage");
+        updateHeader("About", "back");
+    } else if (page === "seva") {
+        showPage("sevaPage");
+        updateHeader("Mandir Seva", "back");
+    } else if (page === "credits") {
+        showPage("creditsPage");
+        updateHeader("Credits", "back");
+    }
 
   currentView = page;
   closeVideo();
@@ -682,17 +695,18 @@ function showPage(pageId) {
   console.log("Showing page:", pageId);
 
   // --- FIX: Added 'creditsPage' to this list ---
-  const pages = [
-    "homePage",
-    "subCategoryPage",
-    "listPage",
-    "lyricsPage",
-    "memoriesPage",
-    "feedbackPage",
-    "addBhajanPage",
-    "creditsPage",
-  ];
-
+const pages = [
+            "homePage",
+            "subCategoryPage",
+            "listPage",
+            "lyricsPage",
+            "memoriesPage",
+            "feedbackPage",
+            "addBhajanPage",
+            "creditsPage",
+            "aboutPage",
+            "sevaPage"
+        ];
   pages.forEach((page) => {
     const element = document.getElementById(page);
     if (element) {
